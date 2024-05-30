@@ -15,6 +15,9 @@ df0["navi"] = df0.apply(lambda x: f'https://www.google.com/maps/dir/?api=1&desti
 st.set_page_config(page_title="いまばりAEDステーション")
 st.title("いまばりAEDステーション")
 
+my_map = "https://www.google.com/maps/d/edit?mid=18z3-aAlx_l3oYY1mM-OJwKo2TlJFXT0&usp=sharing"
+st.write("[マイマップ](%s)" % my_map)
+
 lat, lng = 34.0663183, 132.997528
 
 # フォリウムマップの初期化
