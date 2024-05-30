@@ -5,7 +5,7 @@ import streamlit as st
 from pyproj import Geod
 from streamlit_folium import st_folium
 
-url = st.secrets["db_username"]
+url = st.secrets["url"]
 
 # CSVデータの読み込み
 df0 = pd.read_csv(url)
