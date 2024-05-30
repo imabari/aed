@@ -75,7 +75,7 @@ if st_data:
         width=700,
         column_config={
             "distance": "直線距離",
-            "navi": st.column_config.LinkColumn("ナビ", display_text="🔗"),
+            "navi": st.column_config.LinkColumn("ナビ", display_text="🔗案内"),
         },
         hide_index=True,
     )
