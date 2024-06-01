@@ -11,13 +11,13 @@ def load_data(url):
     df["navi"] = df.apply(lambda x: f'https://www.google.com/maps/dir/?api=1&destination={x["緯度"]},{x["経度"]}', axis=1)
     return df
 
-df0 = load_data(st.secrets["url"])
-
 st.set_page_config(page_title="いまばりAEDステーション")
 st.title("いまばりAEDステーション")
 
 my_map = "https://www.google.com/maps/d/edit?mid=18z3-aAlx_l3oYY1mM-OJwKo2TlJFXT0&usp=sharing"
 st.write("[マイマップ](%s)" % my_map)
+
+df0 = load_data(st.secrets["url"])
 
 lat, lng = 34.0663183, 132.997528
 
