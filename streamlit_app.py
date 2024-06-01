@@ -5,10 +5,12 @@ import streamlit as st
 from pyproj import Geod
 from streamlit_folium import st_folium
 
-url = st.secrets["url"]
+@st.cache_data
+def load_data(url):
+    df = pd.read_csv(url)
+    return df
 
-# CSVデータの読み込み
-df0 = pd.read_csv(url)
+df0 = load_data(st.secrets["url"])
 
 df0["navi"] = df0.apply(lambda x: f'https://www.google.com/maps/dir/?api=1&destination={x["緯度"]},{x["経度"]}', axis=1)
 
