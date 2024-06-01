@@ -8,11 +8,10 @@ from streamlit_folium import st_folium
 @st.cache_data
 def load_data(url):
     df = pd.read_csv(url)
+    df["navi"] = df.apply(lambda x: f'https://www.google.com/maps/dir/?api=1&destination={x["緯度"]},{x["経度"]}', axis=1)
     return df
 
 df0 = load_data(st.secrets["url"])
-
-df0["navi"] = df0.apply(lambda x: f'https://www.google.com/maps/dir/?api=1&destination={x["緯度"]},{x["経度"]}', axis=1)
 
 st.set_page_config(page_title="いまばりAEDステーション")
 st.title("いまばりAEDステーション")
